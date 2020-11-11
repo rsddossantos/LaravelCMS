@@ -1,4 +1,4 @@
-# LaravelCMS
+# LaravelCMS <img src="https://user-images.githubusercontent.com/61060100/98760026-1c8b3200-23b1-11eb-95e1-19521982f3be.png" width="50"> 
 
 ## Sistema de Gerenciamento de Conteúdo
 
