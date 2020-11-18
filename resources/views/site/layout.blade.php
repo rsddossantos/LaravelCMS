@@ -3,40 +3,37 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>@yield('title')</title>
+        <title>{{$front_config['title']}}</title>
         <meta name="description" content="@yield('description')" />
-        <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{asset('assets/css/styles.css')}}" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Start LaravelCMS</a>
+                <a class="navbar-brand js-scroll-trigger" href="painel" target="_blank">Painel LaravelCMS</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                        @foreach($front_menu as $menuslug => $menutitle)
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{$menuslug}}">{{$menutitle}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead">
+        <header class="masthead" style="background:linear-gradient(to bottom, {{$front_config['bgcolor']}} 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url({{asset('assets/images/bg-masthead.jpg')}});">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">Laravel CMS</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Projeto CMS de estudos com Laravel e Bootstrap.</h2>
+                    <h1 class="mx-auto my-0 text-uppercase">{{$front_config['title']}}</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">{{$front_config['subtitle']}}</h2>
                 </div>
             </div>
         </header>
@@ -50,7 +47,7 @@
                                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Address</h4>
                                 <hr class="my-4" />
-                                <div class="small text-black-50">Luiz Migliano, 761 - São Paulo</div>
+                                <div class="small text-black-50">{{$front_config['address']}}</div>
                             </div>
                         </div>
                     </div>
@@ -60,7 +57,7 @@
                                 <i class="fas fa-envelope text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Email</h4>
                                 <hr class="my-4" />
-                                <div class="small text-black-50"><a href="#!">rsddossantos@gmail.com</a></div>
+                                <div class="small text-black-50"><a href="#!">{{$front_config['email']}}</a></div>
                             </div>
                         </div>
                     </div>
@@ -70,7 +67,7 @@
                                 <i class="fas fa-mobile-alt text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Phone</h4>
                                 <hr class="my-4" />
-                                <div class="small text-black-50">(11)99360-5638</div>
+                                <div class="small text-black-50">{{$front_config['phone']}}</div>
                             </div>
                         </div>
                     </div>
@@ -82,14 +79,10 @@
                 </div>
             </div>
         </section>
-        <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © LaravelCMS 2020</div></footer>
-        <!-- Bootstrap core JS-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © {{$front_config['title']}} 2020</div></footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
         <script src="{{asset('assets/js/scripts.js')}}"></script>
     </body>
 </html>

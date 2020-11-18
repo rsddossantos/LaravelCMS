@@ -36,9 +36,21 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Email para contato</label>
+                    <label class="col-sm-2 col-form-label">E-mail para contato</label>
                     <div class="col-sm-10">
                         <input type="email" name="email" value="{{$settings['email']}}" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Telefone</label>
+                    <div class="col-sm-10">
+                        <input type="tel" name="phone" value="{{$settings['phone']}}" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Endereço</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="address" value="{{$settings['address']}}" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group row">
