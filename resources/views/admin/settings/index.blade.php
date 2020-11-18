@@ -54,6 +54,24 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Twitter</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="twitter" value="{{$settings['twitter']}}" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Facebook</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="facebook" value="{{$settings['facebook']}}" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Github</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="github" value="{{$settings['github']}}" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Cor do fundo</label>
                     <div class="col-sm-10">
                         <input type="color" name="bgcolor" value="{{$settings['bgcolor']}}" class="form-control" style="width:70px" />
