@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Site\PageSiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,9 +40,9 @@ Route::prefix('painel')->group(function(){
     Route::put('profilesave', [ProfileController::class, 'save'])->name('profile.save');
     Route::get('settings', [SettingController::class, 'index'])->name('settings');
     Route::put('settingssave', [SettingController::class, 'save'])->name('settings.save');
-
 });
 
+Route::fallback([PageSiteController::class, 'index']);
 
 
 
