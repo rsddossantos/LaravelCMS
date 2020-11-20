@@ -29,6 +29,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Descrição</label>
+                    <div class="col-sm-10">
+                        <textarea name="description" class="form-control">{{ $page->description }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Corpo</label>
                     <div class="col-sm-10">
                         <textarea name="body" class="form-control bodyfield">{{ $page->body }}</textarea>
@@ -54,7 +60,7 @@
             height:300,
             menubar:false,
             plugins:['link', 'table', 'image', 'autoresize', 'lists'],
-            toolbar:'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | table | link image | bullist numlist',
+            toolbar:'undo redo | formatselect | forecolor | bold italic backcolor | alignleft aligncenter alignright alignjustify | table | link image | bullist numlist',
             content_css:[
                 '{{asset('assets/css/content.css')}}'
             ],

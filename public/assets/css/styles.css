@@ -542,6 +542,15 @@ pre code {
   margin-left: auto;
 }
 
+.alternative-font{
+    font-size:3rem !important;
+}
+.page{
+    padding:5%;
+    padding-bottom:20%;
+
+}
+
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 540px;

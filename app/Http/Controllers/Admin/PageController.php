@@ -47,11 +47,13 @@ class PageController extends Controller
     {
         $data = $request->only([
             'title',
+            'description',
             'body'
         ]);
         $data['slug'] = Str::slug($data['title'], '-');
         $validator = Validator::make($data,[
             'title' => ['required', 'string', 'max:100'],
+            'description' => ['string'],
             'body' => ['string'],
             'slug' => ['required', 'string', 'max:100', 'unique:pages']
         ]);
@@ -63,6 +65,7 @@ class PageController extends Controller
         }
         $page = new Page;
         $page->title = $data['title'];
+        $page->description = $data['description'];
         $page->body = $data['body'];
         $page->slug = $data['slug'];
         $page->save();
@@ -112,18 +115,21 @@ class PageController extends Controller
         if($page) {
             $data = $request->only([
                 'title',
+                'description',
                 'body',
             ]);
             if($page['title'] !== $data['title']) {
                 $data['slug'] = Str::slug($data['title'], '-');
                 $validator = Validator::make($data, [
                     'title' => ['required', 'string', 'max:100'],
+                    'description' => ['string'],
                     'body' => ['string'],
                     'slug' => ['required', 'string', 'max:100', 'unique:pages']
                 ]);
             } else {
                 $validator = Validator::make($data, [
-                   'title' => ['required', 'string', 'max:100'],
+                    'title' => ['required', 'string', 'max:100'],
+                    'description' => ['string'],
                     'body' => ['string']
                 ]);
             }
@@ -133,6 +139,7 @@ class PageController extends Controller
                     ->withInput();
             }
             $page->title = $data['title'];
+            $page->description = $data['description'];
             $page->body = $data['body'];
             if(!empty($data['slug'])) {
                 $page->slug = $data['slug'];

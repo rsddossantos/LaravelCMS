@@ -28,6 +28,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Descrição</label>
+                    <div class="col-sm-10">
+                        <textarea name="description" class="form-control">{{old('description')}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Corpo</label>
                     <div class="col-sm-10">
                         <textarea name="body" class="form-control bodyfield">{{old('body')}}</textarea>
