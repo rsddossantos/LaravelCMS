@@ -16,6 +16,7 @@ class HomeadmController extends Controller
 
     public function index(Request $request)
     {
+        $this->history('/painel');
         $visitsCount = 0;
         $onlineCount = 0;
         $pageCount = 0;
@@ -54,5 +55,13 @@ class HomeadmController extends Controller
             'pageValues' => $pageValues,
             'dateInterval' => $interval
         ]);
+    }
+
+    public function history($page){
+        $visitor = new Visitor;
+        $visitor->ip = $_SERVER["REMOTE_ADDR"];
+        $visitor->date_access = date('Y-m-d H:i:s');
+        $visitor->page = $page;
+        $visitor->save();
     }
 }
