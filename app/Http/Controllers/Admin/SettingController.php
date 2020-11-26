@@ -15,8 +15,6 @@ class SettingController extends Controller
     }
     public function index()
     {
-        $home = new HomeadmController;
-        $home->history('/painel/settings');
         $settings = [];
         $dbsettings = Setting::get();
         foreach($dbsettings as $dbsetting) {

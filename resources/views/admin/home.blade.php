@@ -84,7 +84,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Sobre o Sistema</h3>
+                    <h3 class="card-title">Visitantes por dia</h3>
                 </div>
                 <div class="card-body">
                     ...
@@ -95,27 +95,10 @@
     <script>
         function chooseColor(){
             let colors = [];
+            let colors_list = ['#1E90FF','#00BFFF','#87CEEB','#87CEFA','#4169E1','#00CED1'];
             let auxlabels = {!! $pageLabels !!};
             for(var i=0; i<auxlabels.length; i++){
-                switch(auxlabels[i]){
-                    case '/painel':
-                        colors.push('#1E90FF');
-                        break;
-                    case '/painel/pages':
-                        colors.push('#00BFFF');
-                        break;
-                    case '/painel/users':
-                        colors.push('#87CEEB');
-                        break;
-                    case '/painel/settings':
-                        colors.push('#87CEFA');
-                        break;
-                    case '/painel/profile':
-                        colors.push('#4169E1');
-                        break;
-                    default:
-                        colors.push('#00CED1');
-                }
+                colors.push(colors_list[Math.floor(Math.random() * colors_list.length)]);
             }
             return colors;
         }

@@ -17,8 +17,6 @@ class ProfileController extends Controller
     }
     public function index()
     {
-        $home = new HomeadmController;
-        $home->history('/painel/profile');
         $loggedId = Auth::id();
         $user = User::find($loggedId);
         if($user) {

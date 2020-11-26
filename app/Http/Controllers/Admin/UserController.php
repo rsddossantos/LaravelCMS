@@ -22,8 +22,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        $home = new HomeadmController;
-        $home->history('/painel/users');
         $users = User::paginate(10);
         $loggedId = Auth::id();
         return view('admin.users.index', [

@@ -21,8 +21,6 @@ class PageController extends Controller
      */
     public function index()
     {
-        $home = new HomeadmController;
-        $home->history('/painel/pages');
         $pages = Page::paginate(10);
         return view('admin.pages.index', [
             'pages' => $pages

@@ -16,7 +16,6 @@ class HomeadmController extends Controller
 
     public function index(Request $request)
     {
-        $this->history('/painel');
         $visitsCount = 0;
         $onlineCount = 0;
         $pageCount = 0;
