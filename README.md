@@ -4,5 +4,6 @@
 
 - Framework Laravel v.8
 - Banco de dados MySql
-- Importar o arquivo contendo dados e estrutura do banco de dados <strong>/laravelcms.sql</strong>
-- Login: admin@laravelcms.com Senha:1234
+- Criar base de dados (collation utf8mb4_general_ci) e importar o arquivo <strong>/laravelcms.sql</strong>
+- Editar o arquivo .ENV informando dados de sua base e outras particularidades que se fizerem necessárias.
+- Login do usuário administrador: admin@laravelcms.com Senha:1234
