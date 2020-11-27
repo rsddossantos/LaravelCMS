@@ -84,10 +84,10 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Visitantes por dia</h3>
+                    <h3 class="card-title">Qtde de acessos por página</h3>
                 </div>
                 <div class="card-body">
-                    ...
+                    <canvas id="pageBar"></canvas>
                 </div>
             </div>
         </div>
@@ -95,16 +95,19 @@
     <script>
         function chooseColor(){
             let colors = [];
-            let colors_list = ['#1E90FF','#00BFFF','#87CEEB','#87CEFA','#4169E1','#00CED1'];
+            let colors_list = ['#1E90FF','#00BFFF','#87CEEB','#74e5ed','#4169E1','#00CED1','#77f7ea','#1fabd1'];
             let auxlabels = {!! $pageLabels !!};
             for(var i=0; i<auxlabels.length; i++){
-                colors.push(colors_list[Math.floor(Math.random() * colors_list.length)]);
+                index = Math.floor(Math.random() * colors_list.length);
+                colors.push(colors_list[index]);
+                colors_list.splice(index, 1);
             }
             return colors;
         }
         window.onload = function(){
-            let ctx = document.getElementById('pagePie').getContext('2d');
-            window.pagePie = new Chart(ctx, {
+            let ctxpie = document.getElementById('pagePie').getContext('2d');
+            let ctxbar = document.getElementById('pageBar').getContext('2d');
+            window.pagePie = new Chart(ctxpie, {
                 type:'pie',
                 data:{
                     datasets:[{
@@ -118,6 +121,30 @@
                     legend:{
                         display:false
                     }
+                }
+            });
+            window.pageBar = new Chart(ctxbar, {
+                type:'bar',
+                data:{
+                    datasets:[{
+                        data: {{$pageValues}},
+                        backgroundColor:chooseColor()
+                    }],
+                    labels:{!! $pageLabels !!}
+                },
+                options:{
+                    responsive:true,
+                    legend:{
+                        display:false
+                    },
+                    scales: {
+                        yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                            }
+                        }]
+                    },
                 }
             });
         }

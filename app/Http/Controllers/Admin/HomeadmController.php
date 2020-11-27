@@ -25,14 +25,18 @@ class HomeadmController extends Controller
         //Contagem de Visitantes
         $dateInterval = date('Y-m-d H:i:s', strtotime('-'.$interval.' days'));
         $visitsCount = Visitor::where('date_access', '>=', $dateInterval)->count();
+
         //Contagem de Usuários Online
         $datelimit = date('Y-m-d H:i:s', strtotime('-5 minutes'));
         $onlineList = Visitor::select('ip')->where('date_access', '>=', $datelimit)->groupBy('ip')->get();
         $onlineCount = count($onlineList);
+
         //Contagem de Páginas
         $pageCount = Page::count();
+
         //Contagem de Usuários
         $userCount = User::count();
+
         //Contagem para o PagePie (gráfico)
         $pagePie = [];
         $visitsAll = Visitor::selectRaw('page, count(page) as c')
