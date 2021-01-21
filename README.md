@@ -10,4 +10,4 @@
 - Criar base de dados (collation utf8mb4_general_ci) e importar o arquivo <strong>/laravelcms.sql</strong>
 - Editar o arquivo .ENV informando dados de sua base e outras particularidades que se fizerem necessárias.
 - Login do usuário administrador: admin@laravelcms.com Senha:1234
-- Consulte os endpoints e parâmetros necessários no arquivo /routes/api
+
