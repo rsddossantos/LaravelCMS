@@ -2,6 +2,9 @@
 
 ## Sistema de Gerenciamento de Conteúdo
 
+#### Monte o conteúdo através do painel de controle (/painel) e acesse o site confeccionado na raiz do sistema (/).
+
+
 - Framework Laravel v.8
 - Banco de dados MySql
 - Criar base de dados (collation utf8mb4_general_ci) e importar o arquivo <strong>/laravelcms.sql</strong>
