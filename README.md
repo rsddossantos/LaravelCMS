@@ -8,6 +8,7 @@
 - Framework Laravel v.8
 - Banco de dados MySql
 - Criar base de dados (collation utf8mb4_general_ci) e importar o arquivo <strong>/laravelcms.sql</strong>
-- Editar o arquivo .ENV informando dados de sua base e outras particularidades que se fizerem necessárias.
+- Editar o arquivo .ENV informando dados de sua base e outras particularidades que se fizerem necessárias
+- Execute <code>composer install</code> para baixar as dependências
 - Login do usuário administrador: admin@laravelcms.com Senha:1234
 
